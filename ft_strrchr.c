@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsulzbac <lsulzbac@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 16:11:31 by lsulzbac          #+#    #+#             */
-/*   Updated: 2022/05/11 17:55:08 by lsulzbac         ###   ########.fr       */
+/*   Created: 2022/05/11 17:47:17 by lsulzbac          #+#    #+#             */
+/*   Updated: 2022/05/11 17:54:48 by lsulzbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <string.h>
+#include <string.h>
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c)
+{
+	char	to_find;
+	int		i;
+	int		found;
 
-#endif
+	to_find = c;
+	found = -1;
+	i = 0;
+	while (1)
+	{
+		if (to_find == *(s + i))
+			found = i;
+		if (*(s + i) == '\0')
+			break ;
+		i++;
+	}
+	if (found >= 0)
+		return ((char *) s + found);
+	else
+		return (NULL);
+}
