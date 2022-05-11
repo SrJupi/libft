@@ -6,7 +6,7 @@
 /*   By: lsulzbac <lsulzbac@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:46:02 by lsulzbac          #+#    #+#             */
-/*   Updated: 2022/05/10 17:14:04 by lsulzbac         ###   ########.fr       */
+/*   Updated: 2022/05/11 17:45:13 by lsulzbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	char	test;
+
+	test = c;
 	while (1)
 	{
-		if (c == *s)
+		if (test == *s)
 			return ((char *) s);
 		if (*s == '\0')
 			break ;

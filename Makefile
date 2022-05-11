@@ -2,20 +2,18 @@ NAME := libft.a
 COMPILE_FLAGS =	-Wall -Wextra -Werror
 
 
-all: 	create_obj create_lib
+all: 	$(NAME)
 
-create_obj: 
+$(NAME): 
 	gcc $(COMPILE_FLAGS) -c $(wildcard *.c)
-
-create_lib: 
 	ar -cvq $(NAME) *.o
 
-re: fclean
+re: fclean all
 
 fclean: clean
-	rm -f *.o
+	rm -f $(NAME)
+	
 
 clean:
-	rm -f a.out
-	rm -f *.log
-	rm -f $(NAME)
+	rm -f *.o
+	
