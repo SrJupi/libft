@@ -6,7 +6,7 @@
 /*   By: lsulzbac <lsulzbac@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 19:08:56 by lsulzbac          #+#    #+#             */
-/*   Updated: 2022/05/11 20:24:57 by lsulzbac         ###   ########.fr       */
+/*   Updated: 2022/05/12 19:58:08 by lsulzbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;
+	size_t	max;
 
 	i = 0;
-	if (len == SIZE_MAX)
-		sub = (char *) malloc (1000000);
-	else
+	max = ft_strlen(s);
+	if (len <= max)
 		sub = (char *) malloc (len + 1);
+	else
+		sub = (char *) malloc (max + 1);
 	if (sub != NULL)
 	{
-		while (i < len && start <= ft_strlen(s))
+		while (i < len && start < max)
 		{
 			sub[i] = s[start];
 			i++;
