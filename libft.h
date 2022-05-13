@@ -6,7 +6,7 @@
 /*   By: lsulzbac <lsulzbac@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:11:31 by lsulzbac          #+#    #+#             */
-/*   Updated: 2022/05/12 20:03:56 by lsulzbac         ###   ########.fr       */
+/*   Updated: 2022/05/13 14:45:21 by lsulzbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len); //workha
 //putstr
 //putendl
 //putnbr
-
 
 #endif
