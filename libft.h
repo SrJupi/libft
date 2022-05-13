@@ -6,7 +6,7 @@
 /*   By: lsulzbac <lsulzbac@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:11:31 by lsulzbac          #+#    #+#             */
-/*   Updated: 2022/05/13 16:29:25 by lsulzbac         ###   ########.fr       */
+/*   Updated: 2022/05/13 18:57:00 by lsulzbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_atoi(const char *str);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-size_t	ft_strlcat(char * dst, const char * src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 
-//memcpy
 //memmove
 //strlcpy
 //calloc
