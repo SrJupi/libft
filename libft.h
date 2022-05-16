@@ -6,7 +6,7 @@
 /*   By: lsulzbac <lsulzbac@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:11:31 by lsulzbac          #+#    #+#             */
-/*   Updated: 2022/05/13 20:25:39 by lsulzbac         ###   ########.fr       */
+/*   Updated: 2022/05/16 13:57:26 by lsulzbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *scr, size_t len);
+char	*ft_strdup(const char *s1);
 
 //strlcpy
 //calloc
-//strdup
 //strjoin
 //strtrim
 //split
