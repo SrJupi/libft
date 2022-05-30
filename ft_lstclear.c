@@ -6,7 +6,7 @@
 /*   By: lsulzbac <lsulzbac@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:32:37 by lsulzbac          #+#    #+#             */
-/*   Updated: 2022/05/30 15:33:13 by lsulzbac         ###   ########.fr       */
+/*   Updated: 2022/05/30 18:13:27 by lsulzbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	erase = *lst;
 	while (erase != NULL)
 	{
-		del(erase->content);
+		(*del)(erase->content);
 		temp = erase->next;
 		free(erase);
 		erase = temp;
