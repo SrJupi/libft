@@ -6,11 +6,23 @@
 /*   By: lsulzbac <lsulzbac@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:43:08 by lsulzbac          #+#    #+#             */
-/*   Updated: 2022/05/30 18:29:04 by lsulzbac         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:15:02 by lsulzbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static t_list	*mock_lstnew(void *content, void*(*f)(void *))
+{
+	t_list	*r;
+
+	r = (t_list *) malloc (sizeof(t_list));
+	if (r == NULL)
+		return (NULL);
+	r->next = NULL;
+	r->content = (*f)(content);
+	return (r);
+}
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -18,27 +30,21 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*prev;
 
 	new_list = NULL;
-	prev = NULL;
 	if (lst != NULL)
 	{
-		prev = (t_list *) malloc (sizeof(t_list));
+		prev = mock_lstnew(lst->content, (*f));
 		if (prev == NULL)
 			return (NULL);
-		prev->next = NULL;
-		prev->content = (*f)(lst->content);
 		new_list = prev;
 		lst = lst->next;
 		while (lst)
 		{
-			prev->next = (t_list *) malloc (sizeof(t_list));
-			//erro allocacao com ft_lstnew - rever
+			prev->next = mock_lstnew(lst->content, (*f));
 			if (prev->next == NULL)
 			{
 				ft_lstclear(&new_list, (*del));
 				return (NULL);
 			}
-			prev->next->next = NULL;
-			prev->next->content = (*f)(lst->content);
 			prev = prev->next;
 			lst = lst->next;
 		}
