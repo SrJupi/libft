@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsulzbac <lsulzbac@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 18:27:26 by lsulzbac          #+#    #+#             */
-/*   Updated: 2022/05/23 18:33:12 by lsulzbac         ###   ########.fr       */
+/*   Created: 2022/06/01 15:48:29 by lsulzbac          #+#    #+#             */
+/*   Updated: 2022/06/01 15:48:32 by lsulzbac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
+	while (lst)
+	{
+		(*f)(lst->content);
 		lst = lst->next;
-	return (lst);
+	}
 }
