@@ -20,7 +20,7 @@ all: 	$(NAME)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ) $(HEADER)
-	@ar rcs $(NAME) $(OBJ) $(HEADER)
+	@ar -rcs $(NAME) $(OBJ) $(HEADER)
 	@echo "Mandatory part compiled"
 
 re: fclean all
@@ -36,5 +36,5 @@ clean:
 	
 
 bonus: $(OBJ_BONUS) $(HEADER)
-	@ar rc $(NAME) $(OBJ_BONUS) $(HEADER)
+	@ar -rcs $(NAME) $(OBJ_BONUS) $(HEADER)
 	@echo "Bonus part compiled"
